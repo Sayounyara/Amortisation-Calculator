@@ -1,0 +1,95 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Window
+    x:Class="Amortisation.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Amortisation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <!-- The whole thing -->
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <!-- Client Name -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Client Name" />
+            <TextBox x:Name="clientNameTxtBx" PlaceholderText="A??" />
+        </StackPanel>
+        
+        <!-- Finance Company -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Finance Company" />
+            <TextBox x:Name="financeCompanyTxtBx" PlaceholderText="NAB" />
+        </StackPanel>
+
+        <!-- Asset Purchased -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Asset Purchased" />
+            <TextBox x:Name="assetPurchasedTxtBx" PlaceholderText="Car" />
+        </StackPanel>
+
+        <!-- Start Date -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="startDate" Text="Start Date" />
+            <CalendarDatePicker x:Name="startClndrDtPkr" Header="Date of First Payment" PlaceholderText="Start Date" Margin="17 0 0 0" />
+        </StackPanel>
+
+        <!-- Principal Amount -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Principal Amount" />
+            <TextBox x:Name="principalTxtBx" PlaceholderText="100000" />
+        </StackPanel>
+
+        <!-- Payment Amount -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Payment Amount" />
+            <TextBox x:Name="paymentTxtBx" PlaceholderText="1500" />
+        </StackPanel>
+
+        <!-- Term -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!-- Term Amount -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Term" />
+                <TextBox x:Name="termTxtBx" PlaceholderText="60"/>
+            </StackPanel>
+
+            <!-- Yearly - Weekly choice -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock />
+                <ComboBox x:Name="termCmbBx" Text="Payments per Year">
+                    <x:String >Yearly</x:String>
+                    <x:String>Quarterly</x:String>
+                    <x:String>Monthly</x:String>
+                    <x:String>Weekly</x:String>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Lump Sum -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!-- Lump Sum Amount -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Lump Sum Amount" />
+                <TextBox x:Name="lumpSumTxtBx" PlaceholderText="12000" />
+            </StackPanel>
+
+            <!-- None, Up Front, Balloon -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock />
+                <ComboBox x:Name="lumpCmbBx" SelectedIndex="0">
+                    <x:String>None</x:String>
+                    <x:String>Up Front</x:String>
+                    <x:String>Balloon</x:String>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="calculateBtn" Click="calculateBtn_Click" Content="Calculate" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button x:Name="clearBtn" Click="clearBtn_Click" Content="Clear" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Amortisation (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Amortisation (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
